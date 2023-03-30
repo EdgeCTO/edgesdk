@@ -77,9 +77,17 @@ layout.addView(ticker);
 
 #### Step 7 [calling activity cyvle methods]
 you need to put following method in overiden method of activity in which you are calling them. For example to start things you need to call following method in onResume method of your activity
-`ticker.onResume();`
+
+```groovy
+ticker.onResume();
+```
+
+
 #### Step 8 [updating base rate to strart earning EAT]
- `edgeSdk.getW2EarnManager().updateBaseRateOnServer(600)`
+
+ ```groovy
+edgeSdk.getW2EarnManager().updateBaseRateOnServer(600)
+```
 ### Features [Key features]
 1. The EdgeSdk provides socket connection methods for efficient communication.
 2. Thread controlling methods such as start(), close(), startStaking(), stopStaking(), and pauseW2E() allow for effective management of processes.
