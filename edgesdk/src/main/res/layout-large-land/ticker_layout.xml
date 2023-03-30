@@ -98,7 +98,7 @@
                         android:orientation="vertical"
                         >
                         <TextView
-                            android:id="@+id/txt_title_total_coins"
+                            android:id="@+id/txt_title_total_points"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="15dp"
@@ -106,7 +106,7 @@
                             android:textColor="@color/ticker_secondary_txt"
                             android:textSize="9dp" />
                         <TextView
-                            android:id="@+id/txt_total_coins"
+                            android:id="@+id/txt_total_points"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
