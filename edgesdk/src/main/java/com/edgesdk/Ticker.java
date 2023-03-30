@@ -529,23 +529,6 @@ public class Ticker extends LinearLayout {
                 }
             });
 
-            txt_total_points.post(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        txt_total_points.setText(roundThreeDecimals(edgeSdk.getW2EarnManager().getResults().getCoins())+"");
-                    }catch (Exception e){
-                        Log.e("error","error while printing total points"+e.getMessage());
-                        txt_total_eats.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                txt_total_points.setText("-.--");
-                            }
-                        });
-                    }
-                }
-            });
-            
             try {
                 total_eats_timer.schedule(new TotalEatsValuePrinter(), 10);
             }catch (IllegalStateException e){
