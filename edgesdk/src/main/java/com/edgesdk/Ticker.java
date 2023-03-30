@@ -51,6 +51,10 @@ public class Ticker extends LinearLayout {
     @SuppressLint("MissingInflatedId")
     private void init() {
         System.out.println("init-method-called");
+
+        isPrintingThreadsRunning=false;
+        isBackpressed=false;
+
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View view = inflater.inflate(R.layout.ticker_layout, this);
         txt_total_eats = view.findViewById(R.id.txt_total_eats);
