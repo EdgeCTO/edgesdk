@@ -129,10 +129,7 @@ public class TickerResults {
     }
 
     public float getBalance(){
-        return  (float) edgeSdk.getStakingValueFetchingManager().getStkResults().getBalance();
-    }
-    public float getCoins(){
-        return getOffChainBalance();
+        return getOffChainBalance()+ (float) edgeSdk.getStakingValueFetchingManager().getStkResults().getBalance();
     }
 
     public float getEstimatedEarnedEatsInUSD(){
