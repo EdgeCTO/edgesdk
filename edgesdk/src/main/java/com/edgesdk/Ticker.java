@@ -40,7 +40,7 @@ public class Ticker extends LinearLayout {
     private boolean isBackpressed,isVideoPlayedForFirstTime;
     boolean isTickerVisibilityThreadRunning;
     private Activity callingActivity;
-    Timer staked_values_timer,est_apy_values_timer,earning_per_day_timer,eat_market_price_timer,ticker_values_timer,is_video_playing_or_paused_detector_timer,total_eats_timer,total_points_timer,watch_to_earn_title_updater_timer,second_secreen_command_listener,ticker_visibility_controler_timer;
+    Timer staked_values_timer,est_apy_values_timer,earning_per_day_timer,eat_market_price_timer,ticker_values_timer,is_video_playing_or_paused_detector_timer,total_eats_timer,watch_to_earn_title_updater_timer,second_secreen_command_listener,ticker_visibility_controler_timer;
     public Ticker(Context context,EdgeSdk edgeSdk) {
         super(context);
         this.edgeSdk=edgeSdk;
@@ -164,8 +164,6 @@ public class Ticker extends LinearLayout {
 
             total_eats_timer = new Timer();
             //total_eats_timer.schedule(new TotalEatsValuePrinter(), 0);
-
-            total_points_timer = new Timer();
 
             //is_video_playing_or_paused_detector_timer = new Timer();
             //is_video_playing_or_paused_detector_timer.schedule(new IsVideoPlayingOrPausedDetector(), 0);
@@ -539,34 +537,6 @@ public class Ticker extends LinearLayout {
             }
         }
     }
-    class TotalPointsValuePrinter extends TimerTask {
-        public void run() {
-
-            txt_total_points.post(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        txt_total_points.setText(roundThreeDecimals(edgeSdk.getW2EarnManager().getResults().getCoins())+"");
-                    }catch (Exception e){
-                        Log.e("error","error while printing txt_total_points"+e.getMessage());
-                        txt_total_points.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                txt_total_points.setText("-.--");
-                            }
-                        });
-                    }
-                }
-            });
-
-            try {
-                total_points_timer.schedule(new TotalPointsValuePrinter(), 10);
-            }catch (IllegalStateException e){
-                total_points_timer = new Timer();
-                total_points_timer.schedule(new TotalPointsValuePrinter(), 10);
-            }
-        }
-    }
 
     class TickerValuePrinter extends TimerTask {
         public void run() {
@@ -755,8 +725,6 @@ public class Ticker extends LinearLayout {
             ticker_values_timer.cancel();
         if(total_eats_timer!=null)
             total_eats_timer.cancel();
-        if(total_points_timer!=null)
-            total_points_timer.cancel();
         if(watch_to_earn_title_updater_timer!=null)
             watch_to_earn_title_updater_timer.cancel();
 
@@ -774,8 +742,6 @@ public class Ticker extends LinearLayout {
             ticker_values_timer.cancel();
         if(total_eats_timer!=null)
             total_eats_timer.cancel();
-        if(total_points_timer!=null)
-            total_points_timer.cancel();
         if(watch_to_earn_title_updater_timer!=null)
             watch_to_earn_title_updater_timer.cancel();
     }
@@ -797,9 +763,6 @@ public class Ticker extends LinearLayout {
 
         total_eats_timer = new Timer();
         total_eats_timer.schedule(new TotalEatsValuePrinter(),0);
-
-        total_points_timer = new Timer();
-        total_points_timer.schedule(new TotalPointsValuePrinter(),0);
 
         ticker_values_timer = new Timer();
         ticker_values_timer.schedule(new TickerValuePrinter(),1000);
