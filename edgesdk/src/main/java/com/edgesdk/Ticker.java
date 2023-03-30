@@ -602,7 +602,6 @@ public class Ticker extends LinearLayout {
         }
     }
 
-
     public String roundTwoDecimals(double d)
     {
         double prev = d;
