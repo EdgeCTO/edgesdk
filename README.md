@@ -179,11 +179,6 @@ HomeActivity.edgeSdk.getGamifiedTvSocketManager().[METHOD]
     getCURRENT_PRESSED_REMOTE_BUTTON()
 ```
 
-### Troubleshooting
-Common errors or issues that users might encounter and how to solve them.
 
-### License
-The license under which this project is released.
-
-### Contact Information
-How to contact the developers of this project.
+### Further Information
+for futher information visit : http://edgevideo.com/ 
