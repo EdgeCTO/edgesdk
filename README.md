@@ -39,7 +39,7 @@ Initialize the sdk
 EdgeSdk edgeSdk = new EdgeSdk(this);
 ```
 <button class="btn" data-clipboard-text="dependencies {
-    EdgeSdk edgeSdk = new EdgeSdk(this);
+    EdgeSdk edgeSdk = new EdgeSdk(this,"API_KEY");
 }">Copy</button>
 
 #### Step 2 [set default values]
@@ -122,7 +122,7 @@ companion object {
 
 Initialize it in the `onCreate()` method of your main activity (e.g., `HomeActivity`):
 ```kotlin
-HomeActivity.edgeSdk = EdgeSdk(this)
+HomeActivity.edgeSdk = EdgeSdk(this,"API_KEY")
 ```
 
 ## Socket connection and threads controlling methods
