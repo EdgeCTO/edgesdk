@@ -28,7 +28,7 @@ dependencies {
 
 ### Getting API Keys
 #### Step 1: Visit edge studio page
-For getting api key visit : https://edgevideo.com/studio/settings/  and then got to Sdk tab
+For getting api key visit : https://edgevideo.com/studio/settings/  and then get to Sdk tab
 #### Step 2: Generate API Key
 Click "Get API Key" button and enter sdk title and hit register button. After successfull creation of API key you will see that in list below.
 
